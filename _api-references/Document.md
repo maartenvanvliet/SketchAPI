@@ -14,6 +14,7 @@ A Sketch document.
 | -------------------------------------------------- | ------------------------------ |
 | id<span class="arg-type">string</span>             | The unique ID of the document. |
 | pages<span class="arg-type">[Page](#page)[]</span> | The pages of the document.     |
+| path<span class="arg-type">string</span>           | The path to the document (or the appcast URL in case of a Document from a remote Library.     |
 
 ## Access the selected Document
 
@@ -145,7 +146,7 @@ A method to get all shared layer styles defined in the document.
 
 ### Returns
 
-Return an array of the layer [SharedStyle](#sharedstyle) objects defined in the document.
+Return an array of the layer [SharedStyle](#shared-style) objects defined in the document.
 
 ## Find a Shared Layer Style
 
@@ -161,7 +162,7 @@ A method to help find a shared style in the document.
 
 ### Returns
 
-Return a [SharedStyle](#sharedstyle) object or `undefined` if it's not found.
+Return a [SharedStyle](#shared-style) object or `undefined` if it's not found.
 
 ## Get all the Shared Text Styles
 
@@ -173,7 +174,7 @@ A method to get all shared text styles defined in the document.
 
 ### Returns
 
-Return an array of the text [SharedStyle](#sharedstyle) objects defined in the document.
+Return an array of the text [SharedStyle](#shared-style) objects defined in the document.
 
 ## Find a Shared Text Style
 
@@ -189,7 +190,7 @@ A method to help find a shared style in the document.
 
 ### Returns
 
-Return a [SharedStyle](#sharedstyle) object or `undefined` if it's not found.
+Return a [SharedStyle](#shared-style) object or `undefined` if it's not found.
 
 ## Get all the Symbol Masters
 
