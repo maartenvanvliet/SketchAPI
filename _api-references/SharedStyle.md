@@ -9,43 +9,36 @@ var SharedStyle = require('sketch/dom').SharedStyle
 ```
 
 ```javascript
-var sharedStyle = SharedStyle.fromStyle({
+document.sharedTextStyles.push({
   name: 'Header 1',
   style: text.style,
-  document: document,
 })
 ```
 
 A shared style (either a layer style or a text style).
 
-| Properties                                                                 |                                                   |
-| -------------------------------------------------------------------------- | ------------------------------------------------- |
-| id<span class="arg-type">string</span>                                     | The unique ID of the Shared Style.                |
-| styleType<span class="arg-type">[SharedStyle.StyleType](#sharedstylestyletype)</span> | The type of the Shared Style (`Layer` or `Text`). |
-| name<span class="arg-type">string</span>                                   | The name of the Shared Style.                     |
-| style<span class="arg-type">[Style](#style)</span>                         | The Style value that is shared.                   |
+| Properties                                                                            |                                    |
+| ------------------------------------------------------------------------------------- | ---------------------------------- |
+| id<span class="arg-type">string</span>                                                | The unique ID of the Shared Style. |
+| styleType<span class="arg-type">[SharedStyle.StyleType](#sharedstylestyletype)</span> | The type of the Shared Style.      |
+| name<span class="arg-type">string</span>                                              | The name of the Shared Style.      |
+| style<span class="arg-type">[Style](#style)</span>                                    | The Style value that is shared.    |
 
 ## Create a new Shared Style from a Style
 
 ```javascript
-var sharedStyle = SharedStyle.fromStyle({
+document.sharedTextStyles.push({
   name: 'Header 1',
   style: text.style,
-  document: document,
+})
+
+document.sharedLayerStyles.push({
+  name: 'Red Background',
+  style: shape.style,
 })
 ```
 
 Create a new Shared Style with a specific name in a specific Document.
-
-| Parameters                                                                     |                                                              |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------ |
-| options.name<span class="arg-type">string - required</span>                    | The name of the Shared Style.                                |
-| options.style<span class="arg-type">[Style](#style) - required</span>          | The Style instance to use for the value of the Shared Style. |
-| options.document<span class="arg-type">[Document](#document) - required</span> | The Document in which the Shared Style will be created.      |
-
-### Returns
-
-A new SharedStyle
 
 ## Get all the Instances
 
@@ -116,9 +109,10 @@ You can unlink a Shared Style from the Library it comes from and make it a local
 SharedStyle.StyleType.Text
 ```
 
-Enumeration of the type of Shared Style.
+Enumeration of the type of Shared Style. `Unknown` indicates the object is broken and Sketch can't determine the style type.
 
-| Value   |
-| ------- |
-| `Text`  |
-| `Layer` |
+| Value     |
+| --------- |
+| `Text`    |
+| `Layer`   |
+| `Unknown` |
